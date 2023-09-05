@@ -1,40 +1,44 @@
-function ShoppingCart() {
-  this.items = [];
-  this.coupons = [
+class ShoppingCart {
+  items = [];
+  coupons = [
     {code: "ABC", discount: 5},
     {code: "DEF", discount: 10},
     {code: "GHI", discount: 15},
     {code: "JKL", discount: 20}
   ];
-  this.getItemIndex = function (itemId){
+  
+  getItemIndex = function (itemId){
     return this.items.findIndex (item => {
         return item.id === itemId;
     });
-  };
-  this.getCouponIndex = function (code){
+  }
+  getCouponIndex = function (code){
     return this.coupons.findIndex (coupon => {
         return coupon.code === code;
     });
-  };
-  this.addItem = function (item) {
+  }
+  addItem = function (item) {
     if(item.quantity <= 0 || item.price <= 0){
         console.log("The item: " + item.id + " was not added. The quantity or price can't be 0 or lower.");
+        return "Not Added";
     }else if(!Number.isInteger(item.quantity)){
         console.log("The item: " + item.id + " was not added. The quantity must be an integer number.");
+        return "Not Added";
     }else{
         this.items.push(item);
         console.log("The item: " + item.id + " was added.");
+        return "Added";
     }
-  };
-  this.removeItem = function (itemId) {
+  }
+  removeItem = function (itemId) {
     if(this.getItemIndex(itemId) >= 0){
         this.items.splice(this.getItemIndex(itemId),1);
         console.log("The item: " + itemId + " was removed from cart.");
     }else{
         console.log("The item: " + itemId + " was not found. No item was removed from cart.");
     }
-  };
-  this.updateItemQuantity = function (itemId, quantity) {
+  }
+  updateItemQuantity = function (itemId, quantity) {
     if(this.getItemIndex(itemId) < 0){
         console.log("The item: " + itemId + " was not found. No item quantity was updated");
     }else if(!Number.isInteger(quantity)){
@@ -44,8 +48,8 @@ function ShoppingCart() {
         this.items[this.getItemIndex(itemId)].quantity = quantity; 
         console.log("The quantity of the item: " + itemId + " was updated from " + oldQuantity + " to "+ quantity);
     }
-  };
-  this.applyCoupon = function (coupon) {
+  }
+  applyCoupon = function (coupon) {
     let totalPrice = this.calculateTotalPrice();
     if(this.getCouponIndex(coupon) >= 0){
         let couponDiscount = this.coupons[this.getCouponIndex(coupon)].discount;
@@ -56,8 +60,8 @@ function ShoppingCart() {
         console.log("The coupon: " + coupon + " is not valid. No discont was applied.");
         return totalPrice = this.calculateTotalPrice();
     }
-  };
-  this.calculateTotalPrice = function () {
+  }
+  calculateTotalPrice = function () {
     let itemCount = 0;
     let totalPrice = 0;
     let discount = 0;
@@ -72,10 +76,11 @@ function ShoppingCart() {
     } else if (itemCount >= 20) {
       discount = 20;
     }
-    
     return (totalPrice * (1 - discount / 100)).toFixed(2);
-  };
+  }
 }
+
+module.exports = new ShoppingCart();
 
 /*
     Usage example of the ShoppingCart object and its elements
