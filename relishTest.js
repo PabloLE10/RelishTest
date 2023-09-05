@@ -6,6 +6,7 @@ class ShoppingCart {
     {code: "GHI", discount: 15},
     {code: "JKL", discount: 20}
   ];
+  totalPrice = 0;
   
   getItemIndex = function (itemId){
     return this.items.findIndex (item => {
@@ -34,31 +35,38 @@ class ShoppingCart {
     if(this.getItemIndex(itemId) >= 0){
         this.items.splice(this.getItemIndex(itemId),1);
         console.log("The item: " + itemId + " was removed from cart.");
+        return "Removed";
     }else{
         console.log("The item: " + itemId + " was not found. No item was removed from cart.");
+        return "Not Removed";
     }
   }
   updateItemQuantity = function (itemId, quantity) {
     if(this.getItemIndex(itemId) < 0){
         console.log("The item: " + itemId + " was not found. No item quantity was updated");
+        return "Not Updated";
     }else if(!Number.isInteger(quantity)){
         console.log("The item: " + itemId + " was not updated. The quantity expexted value must be an integer number, the actual quantity was: " + quantity);
+        return "Not Updated";
     }else{
         let oldQuantity = this.items[this.getItemIndex(itemId)].quantity
         this.items[this.getItemIndex(itemId)].quantity = quantity; 
         console.log("The quantity of the item: " + itemId + " was updated from " + oldQuantity + " to "+ quantity);
+        return "Updated";
     }
   }
   applyCoupon = function (coupon) {
-    let totalPrice = this.calculateTotalPrice();
+    this.totalPrice = this.calculateTotalPrice();
     if(this.getCouponIndex(coupon) >= 0){
         let couponDiscount = this.coupons[this.getCouponIndex(coupon)].discount;
         console.log("Coupon Discount: " + couponDiscount + "%");
         console.log("Coupon Discount Amount: " + (this.calculateTotalPrice() * (couponDiscount/100)).toFixed(2));
-        return (totalPrice -= totalPrice * (couponDiscount/100)).toFixed(2);
+        this.totalPrice -= this.totalPrice * (couponDiscount/100);
+        return "Valid Coupon"
     }else{
         console.log("The coupon: " + coupon + " is not valid. No discont was applied.");
-        return totalPrice = this.calculateTotalPrice();
+        this.totalPrice = this.calculateTotalPrice();
+        return "Invalid Coupon"
     }
   }
   calculateTotalPrice = function () {
@@ -110,4 +118,5 @@ cart.updateItemQuantity("grape", 3);
 
 // Apply Coupon to new ShoppingCart Total
 console.log({ totalPrice: cart.calculateTotalPrice()});
-console.log({ totalPriceAfterCoupon: cart.applyCoupon("JKL")});
+console.log(cart.applyCoupon("JKL"));
+console.log({ totalPriceAfterCoupon: cart.totalPrice});
