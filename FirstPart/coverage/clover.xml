@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1693971479817" clover="3.2.0">
-  <project timestamp="1693971479817" name="All files">
+<coverage generated="1693976037959" clover="3.2.0">
+  <project timestamp="1693976037959" name="All files">
     <metrics statements="76" coveredstatements="72" conditionals="24" coveredconditionals="22" methods="10" coveredmethods="10" elements="110" coveredelements="104" complexity="0" loc="76" ncloc="76" packages="1" files="1" classes="1"/>
-    <file name="relishTest.js" path="/Users/pablolopez/Desktop/RelishTest/relishTest.js">
+    <file name="relishTest.js" path="/Users/pablolopez/Desktop/RelishTest/FirstPart/relishTest.js">
       <metrics statements="76" coveredstatements="72" conditionals="24" coveredconditionals="22" methods="10" coveredmethods="10"/>
       <line num="2" count="2" type="stmt"/>
       <line num="3" count="2" type="stmt"/>
