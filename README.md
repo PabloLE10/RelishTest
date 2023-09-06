@@ -46,3 +46,10 @@ The total amount in the shopping cart is 29.99 and the product in the shopping c
 3. Validate the results on the terminal
 
 ## Part 5 - KPI Analysis from Unit tests and Cypress automation
+3 of the most important KPIs or QA metrics for automation are: Code Coverage, Automated tests and Passed Tests. It is important to highlight that there are other important metrics to aplly in the QA Process for both manual and automated testing but those apply in a deeper analysis and a bigger project. This other metrics are: defects closure rate, covered requirements, defects fixed per day and defect density among others. 
+
+Code Coverage: In the unit tests is 95% approx with a 100% on functions tested.  
+Automated tests: Since there is only 1 test case created, the automated tests percentage is 100%. 
+Passed Tests: The pass rate for the automation project is 100%.
+
+## Part 6 - Bonus
