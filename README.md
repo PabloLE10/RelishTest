@@ -31,3 +31,9 @@ price: $29.99
 
 ## Expected Results
 The total amount in the shopping cart must be $29.99 which is the value of the product Sauce Labs Backpack
+
+## Actual Result
+The total amount in the shopping cart is 29.99 and the product in the shopping cart is Sauce Labs Backpack
+
+## Pass/fail rate
+100%
