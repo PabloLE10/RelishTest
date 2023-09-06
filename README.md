@@ -36,5 +36,5 @@ The total amount in the shopping cart must be $29.99 which is the value of the p
 The total amount in the shopping cart is 29.99 and the product in the shopping cart is Sauce Labs Backpack
 
 ## Pass/fail rate
-100%
+100%  
 <img width="763" alt="Screenshot 2023-09-06 at 03 08 06" src="https://github.com/PabloLE10/RelishTest/assets/13749596/2ea7cef4-eb12-41de-ae8c-cf69b933cf56">
