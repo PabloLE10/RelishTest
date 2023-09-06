@@ -11,9 +11,11 @@ Repository for Relish QA automation engineer technical test
 Let's assume the test cases are reported in Jira under a project "RT". 
 
 Test Case ID:
+
 The test case ID will be "RT-1"
 
-Test Case Description
+Test Case Description:
+
 This test covers the scenario in which a user navigates to the an e-commerce website and validates that an Item can be added to the cart and that total price in the shopping cart matches the price of the selected item. 
 
 Test Steps:
