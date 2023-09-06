@@ -53,3 +53,4 @@ Automated tests: Since there is only 1 test case created, the automated tests pe
 Passed Tests: The pass rate for the automation project is 100%.
 
 ## Part 6 - Bonus
+Workflow added. The unit tests will be run when any push has been made to the main branch.
