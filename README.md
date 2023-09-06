@@ -24,9 +24,9 @@ This test covers the scenario in which a user navigates to the an e-commerce web
 5. Finally the user validates the final price in the shopping cart matches the price of the selected product. 
 
 ## Test Data
-username: standard_user
-password: secret_sauce
-product: Sauce Labs Backpack
+username: standard_user  
+password: secret_sauce  
+product: Sauce Labs Backpack  
 price: $29.99
 
 ## Expected Results
